@@ -11,6 +11,10 @@ import MobileCoreServices
 
 class ViewController: UIViewController {
     
+    var picFileUrl: URL?
+    
+    @IBOutlet weak var picView: UIImageView!
+    
     @IBAction func writeFiles(_ sender: Any) {
         
         let file = "\(UUID().uuidString).txt"
@@ -29,9 +33,9 @@ class ViewController: UIViewController {
     
     @IBAction func importFiles(_ sender: Any) {
         
-        let documentPicker = UIDocumentPickerViewController(documentTypes: [kUTTypePlainText as String], in: .import)
+        let documentPicker = UIDocumentPickerViewController(documentTypes: [kUTTypePlainText as String, kUTTypeJPEG as String], in: .import)
         documentPicker.delegate = self
-        documentPicker.allowsMultipleSelection = false
+        documentPicker.allowsMultipleSelection = true
         present(documentPicker, animated: true, completion: nil)
     }
 }
@@ -40,27 +44,36 @@ extension ViewController: UIDocumentPickerDelegate {
     
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
         
-        guard let selectedFileURL = urls.first else {
-            return
+        urls.forEach {
+            print($0.lastPathComponent)
         }
         
-        let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-        let sandboxFileURL = dir.appendingPathComponent(selectedFileURL.lastPathComponent)
         
-        if FileManager.default.fileExists(atPath: sandboxFileURL.path) {
-            print("Already exists! Do nothing")
-        }
-        else {
-            
-            do {
-                try FileManager.default.copyItem(at: selectedFileURL, to: sandboxFileURL)
-                
-                print("Copied file!")
-            }
-            catch {
-                print("Error: \(error)")
-            }
-        }
+//        guard let selectedFileURL = urls.first else {
+//            return
+//        }
+//        
+//        let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+//        let sandboxFileURL = dir.appendingPathComponent(selectedFileURL.lastPathComponent)
+//        
+//        if FileManager.default.fileExists(atPath: sandboxFileURL.path) {
+//            print("Already exists! Do nothing")
+//        }
+//        else {
+//            
+//            do {
+//                try FileManager.default.copyItem(at: selectedFileURL, to: sandboxFileURL)
+//                picFileUrl = sandboxFileURL
+//                print("Copied file!")
+//            }
+//            catch {
+//                print("Error: \(error)")
+//            }
+//        }
+//        print("about to do the pic")
+//        picView.image = UIImage(contentsOfFile: picFileUrl!.path)
+//        print("did it")
+       
     }
 }
 

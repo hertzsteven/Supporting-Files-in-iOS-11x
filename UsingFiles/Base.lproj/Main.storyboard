@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="JmX-NW-CRO">
-                                <rect key="frame" x="146.5" y="303" width="81" height="60"/>
+                                <rect key="frame" x="147" y="303.5" width="81" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gq3-T8-cP3">
                                         <rect key="frame" x="0.0" y="0.0" width="81" height="30"/>
@@ -37,18 +35,28 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9MH-Sv-opO">
+                                <rect key="frame" x="16" y="20" width="343" height="235"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="9MH-Sv-opO" firstAttribute="centerX" secondItem="JmX-NW-CRO" secondAttribute="centerX" id="1oH-jH-27X"/>
                             <constraint firstItem="JmX-NW-CRO" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="5TJ-6q-LGb"/>
+                            <constraint firstItem="9MH-Sv-opO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="Bo4-Zm-SSl"/>
+                            <constraint firstItem="JmX-NW-CRO" firstAttribute="top" secondItem="9MH-Sv-opO" secondAttribute="bottom" constant="48.5" id="D9w-0W-5Ni"/>
                             <constraint firstItem="JmX-NW-CRO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YYK-s1-ggq"/>
+                            <constraint firstItem="9MH-Sv-opO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="rhB-QQ-JSf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="picView" destination="9MH-Sv-opO" id="go5-Kv-lje"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-530" y="55"/>
+            <point key="canvasLocation" x="-530.39999999999998" y="54.422788605697157"/>
         </scene>
     </scenes>
 </document>
