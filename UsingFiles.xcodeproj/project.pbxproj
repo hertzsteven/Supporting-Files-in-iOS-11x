@@ -12,6 +12,7 @@
 		22BCB48320A42F6E00CA14F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22BCB48120A42F6E00CA14F6 /* Main.storyboard */; };
 		22BCB48520A42F6F00CA14F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22BCB48420A42F6F00CA14F6 /* Assets.xcassets */; };
 		22BCB48820A42F6F00CA14F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22BCB48620A42F6F00CA14F6 /* LaunchScreen.storyboard */; };
+		46EEEA32241676D800C84510 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46EEEA31241676D800C84510 /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,8 @@
 		22BCB48420A42F6F00CA14F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22BCB48720A42F6F00CA14F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		22BCB48920A42F6F00CA14F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		46EEEA2F241676AA00C84510 /* UsingFiles.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UsingFiles.entitlements; sourceTree = "<group>"; };
+		46EEEA31241676D800C84510 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46EEEA32241676D800C84510 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +44,7 @@
 			children = (
 				22BCB47C20A42F6E00CA14F6 /* UsingFiles */,
 				22BCB47B20A42F6E00CA14F6 /* Products */,
+				46EEEA30241676D800C84510 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,6 +59,7 @@
 		22BCB47C20A42F6E00CA14F6 /* UsingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				46EEEA2F241676AA00C84510 /* UsingFiles.entitlements */,
 				22BCB47D20A42F6E00CA14F6 /* AppDelegate.swift */,
 				22BCB47F20A42F6E00CA14F6 /* ViewController.swift */,
 				22BCB48120A42F6E00CA14F6 /* Main.storyboard */,
@@ -62,6 +68,14 @@
 				22BCB48920A42F6F00CA14F6 /* Info.plist */,
 			);
 			path = UsingFiles;
+			sourceTree = "<group>";
+		};
+		46EEEA30241676D800C84510 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				46EEEA31241676D800C84510 /* CloudKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,6 +294,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = UsingFiles/UsingFiles.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MZ552MTEJZ;
@@ -288,7 +303,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.UsingFiles;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dia.usingfiles;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -300,6 +315,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = UsingFiles/UsingFiles.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MZ552MTEJZ;
@@ -308,7 +324,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.UsingFiles;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dia.usingfiles;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;

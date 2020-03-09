@@ -8,14 +8,22 @@
 
 import UIKit
 import MobileCoreServices
+import CloudKit
+
 
 class ViewController: UIViewController {
-    
+
+    var dbs : CKDatabase {
+          return CKContainer(identifier: "iCloud.com.dia.cloudKitExample.open").publicCloudDatabase
+      }
+
     var picFileUrl: URL?
     
     @IBOutlet weak var picView: UIImageView!
     
     @IBAction func writeFiles(_ sender: Any) {
+        addRecord()
+        return
         
         let file = "\(UUID().uuidString).txt"
         let contents = "Some text..."
@@ -38,6 +46,27 @@ class ViewController: UIViewController {
         documentPicker.allowsMultipleSelection = true
         present(documentPicker, animated: true, completion: nil)
     }
+    
+    fileprivate func addRecord() {
+        // Do any additional setup after loading the view.
+        
+        // make a ckrecord
+        let record = CKRecord(recordType: "iPad")
+        record["currentUser"] = NSString("iiiiii")
+        record["identifier"] =  NSString("iiiiii")
+        record["userLevel"] =   NSString("iiiiii")
+        
+        dbs.save(record) { (record, error) in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            print("added succesfully")
+            print(record as Any)
+        }
+    }
+
+    
 }
 
 extension ViewController: UIDocumentPickerDelegate {
@@ -45,7 +74,7 @@ extension ViewController: UIDocumentPickerDelegate {
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
         
         urls.forEach {
-            print($0.lastPathComponent)
+            print($0.deletingPathExtension().lastPathComponent)
         }
         
         
